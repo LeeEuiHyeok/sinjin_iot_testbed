@@ -1,0 +1,15 @@
+*.log
+*.cfg
+*.conf
+*.pyc
+*.project
+*.pydevproject
+*.zip
+*.gz
+.tox
+.cache
+.pytest_cache/*
+_build/*
+src/ibmiotf.egg-info/*
+MANIFEST
+README.txt
