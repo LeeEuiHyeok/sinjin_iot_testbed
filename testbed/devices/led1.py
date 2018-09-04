@@ -4,7 +4,7 @@
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License v1.0
 # which accompanies this distribution, and is available at
-# http://www.eclipse.org/legal/epl-v10.html 
+# http://www.eclipse.org/legal/epl-v10.html
 #
 # *****************************************************************************
 
@@ -45,8 +45,8 @@ parser.add_argument('-I', '--deviceid', required=False, default=str(uuid.uuid4()
 parser.add_argument('-t', '--token', required=False, default=None, help='authentication token')
 parser.add_argument('-c', '--cfg', required=False, default=None, help='configuration file')
 parser.add_argument('-E', '--event', required=False, default="event", help='type of event to send')
-parser.add_argument('-N', '--nummsgs', required=False, type=int, default=1, help='send this many messages before disconnecting') 
-parser.add_argument('-D', '--delay', required=False, type=float, default=1, help='number of seconds between msgs') 
+parser.add_argument('-N', '--nummsgs', required=False, type=int, default=1, help='send this many messages before disconnecting')
+parser.add_argument('-D', '--delay', required=False, type=float, default=1, help='number of seconds between msgs')
 args, unknown = parser.parse_known_args()
 
 if args.token:
@@ -68,16 +68,19 @@ except Exception as e:
 # Connect and send datapoint(s) into the cloud
 deviceCli.connect()
 
-for x in dataset:
-	data = {'value' : x}
-	def myOnPublishCallback():
-		print("Confirmed event %s received by IoTF\n" % x)
-
-	success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
-	if not success:
-		print("Not connected to IoTF")
-
-	time.sleep(args.delay)
+# for x in dataset:
+# 	data = {'value' : x}
+# 	def myOnPublishCallback():
+# 		print("Confirmed event %s received by IoTF\n" % x)
+#
+# 	success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
+# 	if not success:
+# 		print("Not connected to IoTF")
+#
+# 	time.sleep(args.delay)
+while True:
+    print(" ")
+    time.sleep(1)
 
 
 # Disconnect the device and application from the cloud
