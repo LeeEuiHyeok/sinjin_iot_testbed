@@ -31,6 +31,7 @@ except ImportError:
     import ibmiotf.application
 
 
+
 tableRowTemplate = "%-33s%-30s%s"
 
 def mySubscribeCallback(mid, qos):
