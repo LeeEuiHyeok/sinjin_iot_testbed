@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="165ff042-6343-46f8-a6fd-a02ed58b428a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testbed/applications/sub_pub_app.py" afterPath="$PROJECT_DIR$/testbed/applications/sub_pub_app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testbed/devices/motion.py" afterPath="$PROJECT_DIR$/testbed/devices/motion.py" />
-    </list>
+    <list default="true" id="165ff042-6343-46f8-a6fd-a02ed58b428a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +42,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="655">
               <caret line="131" column="21" lean-forward="true" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
-              <folding />
+              <folding>
+                <marker date="1536147845614" expanded="true" signature="1465:1581" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="1747:1896" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="1935:1975" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="1990:2946" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="2975:5638" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="3238:3298" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="3528:4212" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="3690:3748" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="4106:4149" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="4481:4719" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="4543:4694" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="4767:4808" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="4865:4906" ph="..." />
+                <marker date="1536147845614" expanded="true" signature="4951:4992" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,8 +65,8 @@
       <file leaf-file-name="motion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testbed/devices/motion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="995">
-              <caret line="105" column="42" lean-forward="false" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+            <state relative-caret-position="824">
+              <caret line="96" column="42" lean-forward="true" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
               <folding>
                 <element signature="e#469#480#0" expanded="true" />
               </folding>
@@ -644,7 +656,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="655">
           <caret line="131" column="21" lean-forward="true" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1536147845614" expanded="true" signature="1465:1581" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="1747:1896" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="1935:1975" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="1990:2946" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="2975:5638" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="3238:3298" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="3528:4212" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="3690:3748" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="4106:4149" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="4481:4719" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="4543:4694" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="4767:4808" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="4865:4906" ph="..." />
+            <marker date="1536147845614" expanded="true" signature="4951:4992" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -694,8 +721,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testbed/devices/motion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="995">
-          <caret line="105" column="42" lean-forward="false" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        <state relative-caret-position="824">
+          <caret line="96" column="42" lean-forward="true" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
           <folding>
             <element signature="e#469#480#0" expanded="true" />
           </folding>
