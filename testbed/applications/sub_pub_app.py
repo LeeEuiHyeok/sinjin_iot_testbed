@@ -42,7 +42,7 @@ def mySubscribeCallback(mid, qos):
 def myEventCallback(event):
     # print("%-33s%-30s%s" % (event.timestamp.isoformat(), event.device, event.event + ": " + json.dumps(event.data)))
     # print(json.dumps(event.data['value']))
-    value = json.dumps(int(event.data['value']))
+    value = json.dumps(int(event.data))
     print(value)
 
     if int(value) > 33:
