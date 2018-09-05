@@ -14,6 +14,11 @@ import uuid
 import argparse
 import get_raw_data as grd
 
+import RPi.GPIO as gpio
+
+gpio.setmode(gpio.BCM)
+gpio.setup(23, gpio.IN)
+
 try:
 	import ibmiotf.device
 except ImportError:
@@ -68,17 +73,28 @@ except Exception as e:
 # Connect and send datapoint(s) into the cloud
 deviceCli.connect()
 
-for x in dataset:
-	data = {'value' : x}
-	def myOnPublishCallback():
-		print("Confirmed event %s received by IoTF\n" % x)
-
-	success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
-	if not success:
-		print("Not connected to IoTF")
-
-	time.sleep(args.delay)
-
+# for x in dataset:
+# 	data = {'value' : x}
+# 	def myOnPublishCallback():
+# 		print("Confirmed event %s received by IoTF\n" % x)
+#
+# 	success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
+# 	if not success:
+# 		print("Not connected to IoTF")
+#
+# 	time.sleep(args.delay)
+while True:
+        try:
+            if gpio.input(23) == 1:
+				data = {'value': '1'}
+				print("1")
+				time.sleep(0.5)
+            else:
+				data = {'value': '0'}
+				print("0")
+				time.sleep(0.5)
+        except KeyboardInterrupt:
+            gpio.cleanup()
 
 # Disconnect the device and application from the cloud
 deviceCli.disconnect()
