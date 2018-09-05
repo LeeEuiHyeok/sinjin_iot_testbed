@@ -27,16 +27,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application1.cfg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testbed/applications/application1.cfg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="example_interrupt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testbed/applications/example_interrupt.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -57,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="motion.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="motion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testbed/devices/motion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+            <state relative-caret-position="1387">
+              <caret line="77" column="38" lean-forward="true" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -72,6 +62,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
               <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing_app.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testbed/applications/testing_app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -149,6 +149,7 @@
         <option value="$PROJECT_DIR$/testbed/devices/led1.py" />
         <option value="$PROJECT_DIR$/testbed/applications/simpleApp.py" />
         <option value="$PROJECT_DIR$/testbed/devices/motion.cfg" />
+        <option value="$PROJECT_DIR$/testbed/applications/testing_app.py" />
       </list>
     </option>
   </component>
@@ -228,8 +229,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\LeeEH\Desktop\git repository\sinjin_iot_testbed\testbed\devices" />
       <recent name="C:\Users\LeeEH\Desktop\git repository\sinjin_iot_testbed\testbed\applications" />
+      <recent name="C:\Users\LeeEH\Desktop\git repository\sinjin_iot_testbed\testbed\devices" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -662,6 +663,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testbed/devices/motion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1387">
+          <caret line="77" column="38" lean-forward="true" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testbed/devices/motion.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -670,10 +679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testbed/devices/motion.py">
+    <entry file="file://$PROJECT_DIR$/testbed/applications/testing_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+        <state relative-caret-position="484">
+          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
           <folding />
         </state>
       </provider>
