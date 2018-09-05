@@ -40,14 +40,14 @@ def mySubscribeCallback(mid, qos):
         print("<< Subscription established for event messages at qos %s >> " % qos[0])
     
 def myEventCallback(event):
-    print("%-33s%-30s%s" % (event.timestamp.isoformat(), event.device, event.event + ": " + json.dumps(event.data)))
+    print("%-33s%-30s%s" % (event.timestamp.isoformat(), event.device, event.event + ": " + json.dumps(event.data))
 
-    
+
 def myStatusCallback(status):
     if status.action == "Disconnect":
-        summaryText = "%s %s (%s)" % (status.action, status.clientAddr, status.reason)
-    else:
-        summaryText = "%s %s" % (status.action, status.clientAddr)
+       summaryText = "%s %s (%s)" % (status.action, status.clientAddr, status.reason)
+   else:
+       summaryText = "%s %s" % (status.action, status.clientAddr)
     print(tableRowTemplate % (status.time.isoformat(), status.device, summaryText))
 
 

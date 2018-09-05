@@ -38,7 +38,7 @@ def commandProcessor(cmd):
 
 
 authMethod = None
-dataset = grd.get_data_from_csv('temperature')
+#xdataset = grd.get_data_from_csv('temperature')
 
 # Initialize the properties we need
 parser = argparse.ArgumentParser()
