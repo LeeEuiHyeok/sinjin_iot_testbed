@@ -25,33 +25,39 @@ except ImportError:
     # If you have the module installed, just use "import ibmiotf"
     import os
     import inspect
-    cmd_subfolder = os.path.realpath(os.path.abspath(os.path.join(os.path.split(inspect.getfile( inspect.currentframe() ))[0],"../../src")))
+
+    cmd_subfolder = os.path.realpath(
+        os.path.abspath(os.path.join(os.path.split(inspect.getfile(inspect.currentframe()))[0], "../../src")))
     if cmd_subfolder not in sys.path:
         sys.path.insert(0, cmd_subfolder)
     import ibmiotf.application
 
-
-
 tableRowTemplate = "%-33s%-30s%s"
+
 
 def mySubscribeCallback(mid, qos):
     if mid == statusMid:
         print("<< Subscription established for status messages at qos %s >> " % qos[0])
     elif mid == eventsMid:
         print("<< Subscription established for event messages at qos %s >> " % qos[0])
-    
+
+
 def myEventCallback(event):
     # print("%-33s%-30s%s" % (event.timestamp.isoformat(), event.device, event.event + ": " + json.dumps(event.data)))
     # print(json.dumps(event.data['value']))
-    value = json.dumps(int(event.data['value']))
+    value = json.dumps(int(event.data))
     print(value)
 
-    if int(value) > 33:
-        commandData = {'motion': 1}
+    if int(value) == 1:
+        commandData = {'onoff': 1}
+
+        client.publishCommand("iot_testbed", "LED1", "reboot", "json", commandData)
+    else:
+        commandData = {'onoff': 1}
 
         client.publishCommand("iot_testbed", "LED1", "reboot", "json", commandData)
 
-    
+
 def myStatusCallback(status):
     if status.action == "Disconnect":
         summaryText = "%s %s (%s)" % (status.action, status.clientAddr, status.reason)
@@ -70,23 +76,25 @@ def usage():
         "simpleApp: Basic application connected to the IBM Internet of Things Cloud service." + "\n" +
         "\n" +
         "Options: " + "\n" +
-        "  -h, --help          Display help information" + "\n" + 
-        "  -o, --organization  Connect to the specified organization" + "\n" + 
-        "  -i, --id            Application identifier (must be unique within the organization)" + "\n" + 
-        "  -k, --key           API key" + "\n" + 
-        "  -t, --token         Authentication token for the API key specified" + "\n" + 
-        "  -c, --config        Load application configuration file (ignore -o, -i, -k, -t options)" + "\n" + 
-        "  -T, --devicetype    Restrict subscription to events from devices of the specified type" + "\n" + 
-        "  -I, --deviceid      Restrict subscription to events from devices of the specified id" + "\n" + 
+        "  -h, --help          Display help information" + "\n" +
+        "  -o, --organization  Connect to the specified organization" + "\n" +
+        "  -i, --id            Application identifier (must be unique within the organization)" + "\n" +
+        "  -k, --key           API key" + "\n" +
+        "  -t, --token         Authentication token for the API key specified" + "\n" +
+        "  -c, --config        Load application configuration file (ignore -o, -i, -k, -t options)" + "\n" +
+        "  -T, --devicetype    Restrict subscription to events from devices of the specified type" + "\n" +
+        "  -I, --deviceid      Restrict subscription to events from devices of the specified id" + "\n" +
         "  -E, --event         Restrict subscription to a specific event"
     )
 
 
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, interruptHandler)
-    
+
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "h:o:i:k:t:c:T:I:E:", ["help", "org=", "id=", "key=", "token=", "config=", "devicetype", "deviceid", "event"])
+        opts, args = getopt.getopt(sys.argv[1:], "h:o:i:k:t:c:T:I:E:",
+                                   ["help", "org=", "id=", "key=", "token=", "config=", "devicetype", "deviceid",
+                                    "event"])
     except getopt.GetoptError as err:
         print(str(err))
         usage()
@@ -101,7 +109,7 @@ if __name__ == "__main__":
     deviceType = "+"
     deviceId = "+"
     event = "+"
-    
+
     for o, a in opts:
         if o in ("-o", "--organization"):
             organization = a
@@ -130,7 +138,8 @@ if __name__ == "__main__":
     if configFilePath is not None:
         options = ibmiotf.application.ParseConfigFile(configFilePath)
     else:
-        options = {"org": organization, "id": appId, "auth-method": authMethod, "auth-key": authKey, "auth-token": authToken}
+        options = {"org": organization, "id": appId, "auth-method": authMethod, "auth-key": authKey,
+                   "auth-token": authToken}
     try:
         client = ibmiotf.application.Client(options)
         # If you want to see more detail about what's going on, set log level to DEBUG
@@ -147,19 +156,18 @@ if __name__ == "__main__":
         print(str(e))
         sys.exit()
 
-    
     print("(Press Ctrl+C to disconnect)")
-    
+
     client.deviceEventCallback = myEventCallback
     client.deviceStatusCallback = myStatusCallback
     client.subscriptionCallback = mySubscribeCallback
-    
+
     eventsMid = client.subscribeToDeviceEvents(deviceType, deviceId, event)
     statusMid = client.subscribeToDeviceStatus(deviceType, deviceId)
 
     print("=============================================================================")
     print(tableRowTemplate % ("Timestamp", "Device", "Event"))
     print("=============================================================================")
-    
+
     while True:
         time.sleep(1)

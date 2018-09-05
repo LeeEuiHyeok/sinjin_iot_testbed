@@ -13,6 +13,14 @@ import sys
 import uuid
 import argparse
 import get_raw_data as grd
+import RPi.GPIO as gpio
+
+on_pin = 12
+off_pin = 16
+
+gpio.setmode(gpio.BCM)
+gpio.setup(on_pin, gpio.OUT)
+gpio.setup(off_pin, gpio.OUT)
 
 try:
 	import ibmiotf.device
@@ -29,7 +37,14 @@ except ImportError:
 	import ibmiotf.device
 
 def commandProcessor(cmd):
-	print("Command received: %s" % cmd.data)
+	# print("Command received: %s" % cmd.data)
+    if int(cmd.data) == 1:
+        gpio.output(on_pin, True)
+        gpio.output(off_pin, False)
+    else:
+        gpio.output(on_pin, False)
+        gpio.output(off_pin, True)
+
 
 
 authMethod = None

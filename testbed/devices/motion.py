@@ -91,19 +91,19 @@ while True:
 				def myOnPublishCallback():
 					print("1")
 
-					success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
-					if not success:
-						print("Not connected to IoTF")
-					time.sleep(args.delay)
+				success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
+				if not success:
+					print("Not connected to IoTF")
+				time.sleep(args.delay)
             else:
 				data = {'value': '0'}
 				def myOnPublishCallback():
 					print("0")
 
-					success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
-					if not success:
-						print("Not connected to IoTF")
-					time.sleep(args.delay)
+				success = deviceCli.publishEvent(args.event, "json", data, qos=0, on_publish=myOnPublishCallback)
+				if not success:
+					print("Not connected to IoTF")
+				time.sleep(args.delay)
 
         except KeyboardInterrupt:
             gpio.cleanup()
