@@ -45,7 +45,7 @@ def mySubscribeCallback(mid, qos):
 def myEventCallback(event):
     # print("%-33s%-30s%s" % (event.timestamp.isoformat(), event.device, event.event + ": " + json.dumps(event.data)))
     # print(json.dumps(event.data['value']))
-    value = json.dumps(int(event.data))
+    value = json.dumps(int(event.data['value']))
     print(value)
 
     if int(value) == 1:
@@ -53,7 +53,7 @@ def myEventCallback(event):
 
         client.publishCommand("iot_testbed", "LED1", "reboot", "json", commandData)
     else:
-        commandData = {'onoff': 1}
+        commandData = {'onoff': 0}
 
         client.publishCommand("iot_testbed", "LED1", "reboot", "json", commandData)
 

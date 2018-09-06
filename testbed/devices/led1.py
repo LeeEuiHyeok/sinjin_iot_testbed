@@ -37,8 +37,8 @@ except ImportError:
 	import ibmiotf.device
 
 def commandProcessor(cmd):
-	# print("Command received: %s" % cmd.data)
-    if int(cmd.data) == 1:
+    print("Command received: %s" % cmd.data)
+    if int(cmd.data['onoff']) == 1:
         gpio.output(on_pin, True)
         gpio.output(off_pin, False)
     else:
@@ -48,7 +48,7 @@ def commandProcessor(cmd):
 
 
 authMethod = None
-dataset = grd.get_data_from_csv('temperature')
+# dataset = grd.get_data_from_csv('temperature')
 
 # Initialize the properties we need
 parser = argparse.ArgumentParser()
