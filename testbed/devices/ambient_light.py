@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+import RPi.GPIO as gpio
+import time
+
+anal_pin = 17
+
+gpio.setmode(gpio.BCM)
+gpio.setup(anal_pin, gpio.OUT)
+
+
+=======
 # *****************************************************************************
 # Copyright (c) 2017 IBM Corporation and other Contributors.
 #
@@ -130,3 +141,4 @@ while (True):
 
 # Disconnect the device and application from the cloud
 deviceCli.disconnect()
+>>>>>>> 6f1fde14796777a96a9a279d0a0220cf159a1c8d
